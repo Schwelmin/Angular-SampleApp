@@ -15,6 +15,11 @@ export class ProductDetailsComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  addToCart(product) {
+    this.cartService.addToCart(product);
+    //window.alert('Your product has been added to cart.');
+  }
+
   share(product) {
     this.route.paramMap.subscribe(params => {
       window.alert('The product '+product['name']+' has been shared!');
