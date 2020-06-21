@@ -6,13 +6,17 @@
   <p *ngIf="product.description"><strong>Description:</strong><br />{{ product.description }}</p>
 
   <hr />
-  <button (click)="share()">
-    Share
-  </button>
 
-  <app-product-alerts
-    [product]="product" 
-    (notify)="onNotify()">
-  </app-product-alerts>
+  <div class="product-detail-actions">
+    <button class="detail-action" (click)="addToCart(product)">Buy</button>
 
+    <button class="detail-action" (click)="share(product)">
+      Share
+    </button>
+
+    <app-product-alerts class="detail-action"
+      [product]="product" 
+      (notify)="onNotify(product)">
+    </app-product-alerts>
+  </div>
 </div>

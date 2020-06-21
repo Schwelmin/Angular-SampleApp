@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -13,15 +14,21 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private cartService: CartService
   ) { }
 
-  share() {
+  addToCart(product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to cart.');
+  }
+
+  share(product) {
     this.route.paramMap.subscribe(params => {
-      window.alert('The product '+products[+params.get('productId')]['name']+' has been shared!');
+      window.alert('The product '+product['name']+' has been shared!');
     });
   }
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  onNotify(product) {
+    window.alert('Too expensive? You will be notified when the '+product['name']+' goes on sale!');
   }
 
   ngOnInit() {

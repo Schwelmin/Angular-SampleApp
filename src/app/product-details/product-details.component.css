@@ -1,0 +1,9 @@
+.product-detail-actions {
+  margin: 10px -5px;
+  clear: both;
+}
+  .product-detail-actions:after { content: ''; clear: both; display: block; }
+.product-detail-actions .detail-action {
+  float: left;
+  margin: 0px 5px;
+}
