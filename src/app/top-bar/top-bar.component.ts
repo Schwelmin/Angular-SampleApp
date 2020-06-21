@@ -16,5 +16,4 @@ export class TopBarComponent implements OnInit {
   ngOnInit() {
     this.items = this.cartService.getItems();
   }
-
 }

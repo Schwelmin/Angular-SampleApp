@@ -9,11 +9,39 @@
 <hr />
 
 <div class="cart-actions">
-  <!--<button class="cart-action" (click)="clearCart()">
+  <button class="cart-action" (click)="clearCart()">
     Clear Cart
-  </button>-->
+  </button>
 
   <p class="cart-action">
     <a routerLink="/shipping"><button>Shipping Prices</button></a>
   </p>
 </div>
+
+<hr />
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+  
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+
+  <div>
+    <label for="location">
+      Location
+    </label>
+    <input id="location" type="text" formControlName="location">
+  </div>
+
+  <button class="button" type="submit">Order</button>
+</form>
