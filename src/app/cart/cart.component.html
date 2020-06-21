@@ -1,5 +1,4 @@
 <h3>Cart</h3>
-<p>See all of your selected products here.</p>
 
 <div class="cart-item" *ngFor="let item of items; index as itemCounter">
   <span>#{{ itemCounter+1 }}</span>
@@ -7,8 +6,14 @@
   <span>{{ item.price | currency }}</span>
 </div>
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->
+<hr />
+
+<div class="cart-actions">
+  <!--<button class="cart-action" (click)="clearCart()">
+    Clear Cart
+  </button>-->
+
+  <p class="cart-action">
+    <a routerLink="/shipping"><button>Shipping Prices</button></a>
+  </p>
+</div>

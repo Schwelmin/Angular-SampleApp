@@ -1,0 +1,9 @@
+.cart-actions {
+  margin: 10px -5px;
+  clear: both;
+}
+  .cart-actions:after { content: ''; clear: both; display: block; }
+.cart-actions .cart-action {
+  float: left;
+  margin: 0px 5px;
+}
